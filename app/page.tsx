@@ -1,13 +1,10 @@
 "use client"
-import { useEffect, useState } from 'react';
-import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+
 import Image from 'next/image';
 import { Parallax } from 'react-scroll-parallax';
 import FloatingText from "./components/FloatingText";
 
 export default function Home() {
-  const { scrollY } = useScroll();
-  const scale = useTransform(scrollY, [0, 300], [1, 1.2]); // Zoom effect
   return (
     <div id="parallax-page" className="">
 
