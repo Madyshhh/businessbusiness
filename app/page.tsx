@@ -1,63 +1,36 @@
 "use client"
 import { useEffect, useState } from 'react';
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
-// import Image from 'next/image';
+import Image from 'next/image';
+import { Parallax } from 'react-scroll-parallax';
 import FloatingText from "./components/FloatingText";
 
 export default function Home() {
-  const { scrollYProgress, scrollY } = useScroll();
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001,
-  });
-
-  const [scrollYValue, setScrollYValue] = useState(0);
-  const scale = 1 + scrollYValue / 1000; // Adjust 1000 for the desired zoom speed
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollYValue(window.scrollY);  // Get scroll position
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // Create a parallax effect for the second section
-  const y2 = useTransform(scrollY, [0, 1000], [0, -200]);
-
+  const { scrollY } = useScroll();
+  const scale = useTransform(scrollY, [0, 300], [1, 1.2]); // Zoom effect
   return (
     <div id="parallax-page" className="">
-      <motion.div className="progress-bar" style={{ scaleX }} />
 
-      <section className="hero is-fullheight"> {/* Use is-fullheight for full viewport height */}
+      <section className="hero is-fullheight" id='home' style={{ position: "relative", overflow: "hidden" }}> {/* Use is-fullheight for full viewport height */}
         <div className="hero-background">
-          <div className="image-container">
-            <motion.div
-              style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                width: '100%',
-                height: '100%',
-                backgroundImage: 'url(/images/hero-image.jpg)',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                backgroundAttachment: 'fixed', // Make the background image fixed
-              }}
-              initial={{ scale: 1 }}
-              animate={{ scale }}
-              transition={{ type: 'spring', stiffness: 50, damping: 100 }}
-            />
-          </div>
+          <Parallax scale={[1, 1.1]} speed={-15}>
+            <div className="image-container">
+              <Image
+                src="/images/hero-image-1.jpg"
+                alt="Hero Image"
+                fill
+                style={{ objectFit: "cover" }}
+                quality={100}
+              />
+            </div>
+          </Parallax>
           <div className="hero-overlay"></div>
         </div>
         <div className="hero-head">
-          <header className="navbar">
-            <div className="container">
+          <header className="navbar is-fixed-top">
+            <div className="container navbar-container">
               <div className="navbar-brand">
-                <a className="navbar-item">
+                <a className="navbar-item" href='#home'>
                   Business logo
                 </a>
                 <span className="navbar-burger" data-target="navbarMenuHeroC">
@@ -69,11 +42,11 @@ export default function Home() {
               </div>
               <div id="navbarMenuHeroC" className="navbar-menu">
                 <div className="navbar-end">
-                  <a className="navbar-item ">Services</a>
-                  <a className="navbar-item">About us</a>
-                  <a className="navbar-item">Team</a>
+                  <a className="navbar-item" href='#services'>Services</a>
+                  <a className="navbar-item" href='#about'>About us</a>
+                  <a className="navbar-item" href='#team'>Team</a>
                   <span className="navbar-item">
-                    <a className="button is-link is-inverted">
+                    <a className="button is-primary" href='#contact'>
                       {/* <span className="icon">
                         <i className="fab fa-github"></i>
                       </span> */}
@@ -85,21 +58,27 @@ export default function Home() {
             </div>
           </header>
         </div>
+
         <div className="hero-body">
           <div className="container">
             <div className="columns is-vcentered"> {/* Vertically center content */}
+
               <div className="column is-6"> {/* Adjust column width as needed */}
-                <FloatingText duration={0.6}>
-                  <h1 className="title hero-title is-1 has-text-white">Your Title Here</h1>
-                </FloatingText>
-                <FloatingText duration={0.8}>
-                  <p className="subtitle is-4 has-text-white">
-                    A short and compelling description.
-                  </p>
-                </FloatingText>
-                <FloatingText duration={1.0}>
-                  <button className="button mt-5 is-primary is-medium">Get a quote</button>
-                </FloatingText>
+                <Parallax speed={20}>
+                  <FloatingText duration={0.6}>
+                    <h1 className="title hero-title has-text-white">Your Title Here</h1>
+                  </FloatingText>
+                  <FloatingText duration={0.8}>
+                    <p className="subtitle is-4 has-text-white">
+                      A short and compelling description.
+                    </p>
+                  </FloatingText>
+                </Parallax>
+                <Parallax speed={18}>
+                  <FloatingText duration={1.0}>
+                    <a className="button mt-5 is-info is-medium" href='#contact'>Get a quote</a>
+                  </FloatingText>
+                </Parallax>
               </div>
               <div className="column is-6">
                 {/* Optional: Add an image or other content here */}
@@ -109,20 +88,55 @@ export default function Home() {
           </div>
         </div>
 
+
         <div className="hero-foot">
 
         </div>
       </section>
 
-      <section className="section content">
-        <div className="container ">
-          <motion.div style={{ y: y2 }}>
-            <FloatingText duration={1.0}>
-              <h2 className="title is-2">Section Title</h2>
-            </FloatingText>
-            <p className="subtitle is-4">Section subtitle</p>
-          </motion.div>
+      <section className="section" id='services'>
+
+        <div className="block info-container is-flex is-flex-direction-column is-align-items-center is-background-white is-py-6">
+          <FloatingText duration={1.0}>
+            <h2 className="title is-2">Services</h2>
+          </FloatingText>
+          <p className="subtitle is-4">Section subtitle</p>
         </div>
+
+      </section>
+
+
+      <section className="section" id='about'>
+
+        <div className="block info-container is-flex is-flex-direction-column is-align-items-center is-background-white is-py-6">
+          <FloatingText duration={1.0}>
+            <h2 className="title is-2">About us</h2>
+          </FloatingText>
+          <p className="subtitle is-4">Section subtitle</p>
+        </div>
+
+      </section>
+
+      <section className="section" id='team'>
+
+        <div className="block info-container is-flex is-flex-direction-column is-align-items-center is-background-white is-py-6">
+          <FloatingText duration={1.0}>
+            <h2 className="title is-2">Team</h2>
+          </FloatingText>
+          <p className="subtitle is-4">Section subtitle</p>
+        </div>
+
+      </section>
+
+      <section className="section" id='contact'>
+
+        <div className="block info-container is-flex is-flex-direction-column is-align-items-center is-background-white is-py-6">
+          <FloatingText duration={1.0}>
+            <h2 className="title is-2">Contact us</h2>
+          </FloatingText>
+          <p className="subtitle is-4">Section subtitle</p>
+        </div>
+
       </section>
     </div>
   );
