@@ -19,7 +19,7 @@ https://www.wix.com/website-template/view/html/2855?originUrl=https%3A%2F%2Fwww.
 
 https://www.wix.com/website-template/view/html/1736?originUrl=https%3A%2F%2Fwww.wix.com%2Fwebsite%2Ftemplates%2Fhtml%2Fbusiness%2Fadvertising-marketing&tpClick=view_button&esi=6bc6606e-41e4-4fd4-ad6d-a3ab13e5683a
 
-#Also using CSS framework called BULMA - https://bulma.io/
+Also using CSS framework called BULMA - https://bulma.io/
 
 
 ## Learn More
