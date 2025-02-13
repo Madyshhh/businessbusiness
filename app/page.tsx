@@ -1,7 +1,7 @@
 "use client"
 import { useEffect, useState } from 'react';
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
-import Image from 'next/image';
+// import Image from 'next/image';
 import FloatingText from "./components/FloatingText";
 
 export default function Home() {
