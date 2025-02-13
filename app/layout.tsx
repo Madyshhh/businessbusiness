@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "./main.scss";
 import { Analytics } from "@vercel/analytics/react"
-import "bulma/css/bulma.min.css"; // Import Bulma CSS
+import { Providers } from './providers';
 
 
 
@@ -17,10 +18,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <body
         className=""
       >
-        {children}
+        <Providers>{children}</Providers>
         <Analytics />
       </body>
     </html>
