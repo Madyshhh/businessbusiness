@@ -1,101 +1,129 @@
-import Image from "next/image";
+"use client"
+import { useEffect, useState } from 'react';
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+import Image from 'next/image';
+import FloatingText from "./components/FloatingText";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const { scrollYProgress, scrollY } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+  const [scrollYValue, setScrollYValue] = useState(0);
+  const scale = 1 + scrollYValue / 1000; // Adjust 1000 for the desired zoom speed
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollYValue(window.scrollY);  // Get scroll position
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Create a parallax effect for the second section
+  const y2 = useTransform(scrollY, [0, 1000], [0, -200]);
+
+  return (
+    <div id="parallax-page" className="">
+      <motion.div className="progress-bar" style={{ scaleX }} />
+
+      <section className="hero is-fullheight"> {/* Use is-fullheight for full viewport height */}
+        <div className="hero-background">
+          <div className="image-container">
+            <motion.div
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                backgroundImage: 'url(/images/hero-image.jpg)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundAttachment: 'fixed', // Make the background image fixed
+              }}
+              initial={{ scale: 1 }}
+              animate={{ scale }}
+              transition={{ type: 'spring', stiffness: 50, damping: 100 }}
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </div>
+          <div className="hero-overlay"></div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <div className="hero-head">
+          <header className="navbar">
+            <div className="container">
+              <div className="navbar-brand">
+                <a className="navbar-item">
+                  Business logo
+                </a>
+                <span className="navbar-burger" data-target="navbarMenuHeroC">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </div>
+              <div id="navbarMenuHeroC" className="navbar-menu">
+                <div className="navbar-end">
+                  <a className="navbar-item ">Services</a>
+                  <a className="navbar-item">About us</a>
+                  <a className="navbar-item">Team</a>
+                  <span className="navbar-item">
+                    <a className="button is-link is-inverted">
+                      {/* <span className="icon">
+                        <i className="fab fa-github"></i>
+                      </span> */}
+                      <span>Contact us</span>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </header>
+        </div>
+        <div className="hero-body">
+          <div className="container">
+            <div className="columns is-vcentered"> {/* Vertically center content */}
+              <div className="column is-6"> {/* Adjust column width as needed */}
+                <FloatingText duration={0.6}>
+                  <h1 className="title hero-title is-1 has-text-white">Your Title Here</h1>
+                </FloatingText>
+                <FloatingText duration={0.8}>
+                  <p className="subtitle is-4 has-text-white">
+                    A short and compelling description.
+                  </p>
+                </FloatingText>
+                <FloatingText duration={1.0}>
+                  <button className="button mt-5 is-primary is-medium">Get a quote</button>
+                </FloatingText>
+              </div>
+              <div className="column is-6">
+                {/* Optional: Add an image or other content here */}
+                {/* <Image src="/images/your-other-image.png" alt="Other Image" width={400} height={300} /> */}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="hero-foot">
+
+        </div>
+      </section>
+
+      <section className="section content">
+        <div className="container ">
+          <motion.div style={{ y: y2 }}>
+            <FloatingText duration={1.0}>
+              <h2 className="title is-2">Section Title</h2>
+            </FloatingText>
+            <p className="subtitle is-4">Section subtitle</p>
+          </motion.div>
+        </div>
+      </section>
     </div>
   );
 }
