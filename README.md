@@ -12,8 +12,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-`components/ParallaxSection.tsx` is not in use, I was just experimenting. 
-
 I'm trying to make something inbetween these websites: 
 https://www.wix.com/website-template/view/html/2855?originUrl=https%3A%2F%2Fwww.wix.com%2Fwebsite%2Ftemplates%2Fhtml%2Fbusiness&tpClick=view_button&esi=cbf6465b-5005-47b7-a609-d0fb7d61bc03
 
