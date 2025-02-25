@@ -93,11 +93,19 @@ export default function Home() {
 
       <section className="section" id='services'>
 
-        <div className="block info-container is-flex is-flex-direction-column is-align-items-center is-background-white is-py-6">
+        <div style={{width: "100%"}} className="block info-container is-flex is-flex-direction-column is-align-items-center is-background-white is-py-6">
           <FloatingText duration={1.0}>
             <h2 className="title is-2">Services</h2>
           </FloatingText>
-          <p className="subtitle is-4">Section subtitle</p>
+
+          <p className="subtitle is-4" >Section subtitle</p>
+
+          <figure className="image">
+            <Image style={{width: "30%", borderRadius:"30px"}} className="serviceImage is-rounded" src="images\hero-image-2.jpg" alt="Hero image" />
+
+          </figure>
+
+
         </div>
 
       </section>
