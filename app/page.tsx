@@ -50,7 +50,7 @@ export default function Home() {
               <div className="column is-6"> {/* Adjust column width as needed */}
                 <Parallax speed={20}>
                   <FloatingText duration={0.6}>
-                    <h1 className="title hero-title">MAK Solutions</h1>
+                    <h1 className="title hero-title">Solutions</h1>
                   </FloatingText>
                   <FloatingText duration={0.8}>
                     <p className="subtitle is-4 hero-subtitle">

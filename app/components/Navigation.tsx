@@ -33,7 +33,7 @@ const Navigation: React.FC = () => {
 
                 <div className={`navbar-brand ${isScrolled ? 'scrolled' : ''}`}>
                     <a className="navbar-item" href='#home'>
-                        MAK Solutions
+                        Solutions
                     </a>
                     <span
                         className={`navbar-burger ${isMenuActive ? 'is-active' : ''}`}
