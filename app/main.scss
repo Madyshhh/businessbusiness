@@ -1,7 +1,7 @@
 .hero-title {
-    font-family: Inter;
-    font-weight: 300;
-    font-size: 5rem;
+  font-family: Inter;
+  font-weight: 300;
+  font-size: 5rem;
 }
 
 /* section {
@@ -14,41 +14,87 @@
 
 
 .section {
-    min-height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    /* scroll-snap-align: start; */
+  /* scroll-snap-align: start; */
 }
 
 .hero-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-  
-  .image-container {
-    position: relative;
-    width: 100%;
-    height: 100vh; /* Ensure it has a proper height */
-  }
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  /* Ensure it has a proper height */
+}
 
 .hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--hero-overlay-color);
 }
 
-.hero-head {
-    z-index: 4;
-    background: rgba(0, 0, 0, 0.788);
+.hero-title {
+  color: var(--hero-title-color);
 }
 
+.hero-subtitle {
+  color: var(--hero-subtitle-color);
+}
+
+.navbar {
+  --bulma-navbar-h: 247;
+  // --bulma-navbar-padding-vertical: 1rem;
+  // --bulma-navbar-padding-horizontal: 5rem;
+  --navbar-item-background-a: 1%;
+  // --bulma-navbar-item-img-max-height: 2rem;
+  --bulma-navbar-burger-color: hsl(22deg, 80%, 62%);
+}
+
+.navbar-brand .scrolled {
+  background-color: var(--bulma-body-background-color);
+}
+
+.scrolled {
+  background-color: var(--bulma-body-background-color);
+  // background-color: hsl(247deg, 50%, 9%);
+  // background-color: hsl(var(--bulma-scheme-h), var(--bulma-scheme-s), 9%);
+}
+
+.navbar-brand .navbar-item:hover {
+  background-color: transparent;
+}
+
+@media screen and (max-width: 1024px) {
+  .navbar-brand{
+    background-color: var(--bulma-body-background-color);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .navbar-item {
+    border-radius: 5px;
+    margin-left: 20px;
+    height: 2rem;
+    align-self: center;
+  }
+}
+
+.navbar-item {
+  color: var(--bulma-title-color);
+  // font-weight: var();
+}

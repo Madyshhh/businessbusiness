@@ -20,7 +20,38 @@
   --bulma-link-l: 20%;
   --bulma-info-h: 46deg;
   --bulma-info-l: 62%;
+  --bulma-scheme-h: 247;
+  --bulma-scheme-s: 50%;
+  --bulma-burger-h: 22deg;
+  --bulma-title-color-dark: hsl(221deg, 14%, 94%); /* Dark scheme color */
+  --bulma-title-color-light: hsl(223, 14%, 10%);
   --bulma-family-primary: Manrope, Inter, Roboto, SF Pro, Segoe UI, Oxygen, Ubuntu, Helvetica Neue, Helvetica, Arial, sans-serif;
+
+  --hero-overlay-color: rgba(2, 1, 29, 0.7); /* Default overlay color */
+  --hero-overlay-color-dark: rgba(2, 1, 29, 0.7); /* Dark scheme overlay color */
+  --hero-overlay-color-light: rgba(255, 240, 221, 0.596); 
+  --hero-title-color-dark: hsl(33, 100%, 94%);
+  --hero-subtitle-color-dark: hsl(0, 0%, 100%);
+  --hero-title-color-light: hsl(30, 100%, 2%);
+  --hero-subtitle-color-light: hsl(29, 62%, 12%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bulma-title-color: var(--bulma-title-color-dark);
+    --hero-overlay-color: var(--hero-overlay-color-dark);
+    --hero-title-color: var(--hero-title-color-dark);
+    --hero-subtitle-color: var(--hero-subtitle-color-dark);    
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bulma-title-color: var(--bulma-title-color-light);
+    --hero-overlay-color: var(--hero-overlay-color-light);
+    --hero-title-color: var(--hero-title-color-light);
+    --hero-subtitle-color: var(--hero-subtitle-color-light);
+  }
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -32,9 +63,4 @@
 html {
   /* scroll-snap-type: y mandatory; */
   scroll-behavior: smooth;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
 }
