@@ -12,8 +12,9 @@
     padding: 20px;
   } */
 
+
 .section {
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -51,13 +52,3 @@
     background: rgba(0, 0, 0, 0.788);
 }
 
-.info-container{
-    width: 80%;
-    height: 80%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 20px;
-    background-color: rgb(38, 41, 40);
-}
