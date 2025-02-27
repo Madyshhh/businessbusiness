@@ -3,6 +3,10 @@
 import Image from 'next/image';
 import { Parallax } from 'react-scroll-parallax';
 import FloatingText from "./components/FloatingText";
+import ServicesBox from './components/ServicesBox';
+import { CgWebsite } from "react-icons/cg";
+import { MdOutlineDomainVerification } from "react-icons/md";
+import { TbSeo } from "react-icons/tb";
 
 export default function Home() {
   return (
@@ -91,24 +95,68 @@ export default function Home() {
         </div>
       </section>
 
+
       <section className="section" id='services'>
-
-        <div style={{width: "100%"}} className="block info-container is-flex is-flex-direction-column is-align-items-center is-background-white is-py-6">
+        <div className="block info-container is-flex is-flex-direction-column is-align-items-center">
           <FloatingText duration={1.0}>
-            <h2 className="title is-2">Services</h2>
+            <h2 className="title is-2 pb-5">Services</h2>
           </FloatingText>
-
-          <p className="subtitle is-4" >Section subtitle</p>
-
-          <figure className="image">
-            <Image style={{width: "30%", borderRadius:"30px"}} className="serviceImage is-rounded" src="images\hero-image-2.jpg" alt="Hero image" />
-
-          </figure>
-
-
+          <div className="columns is-multiline ">
+            <ServicesBox
+              icon={<CgWebsite className="has-text-primary" size={60} />}
+              title="Website development"
+              description="We offer mobile first website development services to help you create a professional and engaging online presence for your business. Custom designs, responsive layouts, and user-friendly interfaces to enhance the user experience. Whatever your needs, we can help you build a website that meets your goals and exceeds your expectations."
+              initialX={-100}
+              initialOpacity={0}
+              transitionDuration={0.8}
+            />
+            <ServicesBox
+              icon={<MdOutlineDomainVerification className="has-text-primary" size={60} />}
+              title="Hosting & domains"
+              description="Our hosting and domain services provide secure, reliable, and scalable solutions to ensure your website is always online and accessible to your customers. We offer a range of hosting plans and domain registration services to meet your needs and budget."
+              initialX={-100}
+              initialOpacity={0}
+              transitionDuration={1.0}
+            />
+            <ServicesBox
+              icon={<TbSeo className='has-text-primary' size={60} />}
+              title="Search Engine Optimization"
+              description="Our SEO services help improve your website's visibility in search engine results, driving more organic traffic and increasing your online presence. We offer keyword research, on-page optimization, link building, and other strategies to help you rank higher in search results."
+            />
+            <ServicesBox
+              icon={<CgWebsite className="has-text-primary" size={60} />}
+              title="Custom E-Commerce Solutions"
+              description='We offer custom e-commerce solutions tailored to your business needs, including online stores, shopping carts, and payment gateways to help you sell products and services online. Our e-commerce solutions are designed to be secure, scalable, and easy to manage.'
+            />
+            <ServicesBox
+              icon={<CgWebsite className="has-text-primary" size={60} />}
+              title="Mobile application development"
+              description="We offer mobile application development services to help you reach your customers on the go, with custom apps designed for iOS and Android devices. Our mobile apps are user-friendly, responsive, and optimized for performance."
+            />
+            <ServicesBox
+              icon={<CgWebsite className="has-text-primary" size={60} />}
+              title="Font-end development"
+              description="Our front-end development services focus on creating interactive and user-friendly interfaces for your website, with custom designs and responsive layouts to enhance the user experience. We use the latest web technologies to build fast, efficient, and visually appealing websites."
+            />
+            <ServicesBox
+              icon={<CgWebsite className="has-text-primary" size={60} />}
+              title="Back-end development"
+              description="Our back-end development services focus on building robust and scalable server-side applications to power your website, with secure data storage and efficient processing capabilities. We use the latest technologies and frameworks to create reliable and high-performance web applications."
+            />
+            <ServicesBox
+              icon={<CgWebsite className="has-text-primary" size={60} />}
+              title="WordPress & Shopify Design & Development"
+              description="We offer WordPress and Shopify design and development services to help you create custom websites and online stores that are easy to manage and update. Our WordPress and Shopify solutions are user-friendly, scalable, and optimized for performance."
+            />
+            <ServicesBox
+              icon={<CgWebsite className="has-text-primary" size={60} />}
+              title="Worldwide Support & Maintenance"
+              description="We offer worldwide support and maintenance services to help you keep your website up and running smoothly, with 24/7 monitoring, regular updates, and technical support to ensure your website is always online and accessible to your customers."
+            />
+          </div>
         </div>
-
       </section>
+
 
 
       <section className="section" id='about'>
