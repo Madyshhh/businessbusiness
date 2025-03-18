@@ -15,9 +15,13 @@
   /* --bulma-primary-h: 22deg;
   --bulma-primary-s: 97%;
   --bulma-primary-l: 56%; */
-  --bulma-link-h: 316deg;
+  --accent-color: hsl(201deg, 87%, 49%);
+  /* --bulma-link-h: 316deg;
   --bulma-link-s: 44%;
-  --bulma-link-l: 20%;
+  --bulma-link-l: 20%; */
+  --bulma-link-h: 201deg;
+  --bulma-link-s: 87%;
+  --bulma-link-l: 49%;
   --bulma-info-h: 46deg;
   --bulma-info-l: 62%;
   --bulma-scheme-h: 247;
@@ -60,7 +64,13 @@
     --foreground: #ededed;
   }
 } */
+
+
 html {
   /* scroll-snap-type: y mandatory; */
   scroll-behavior: smooth;
+}
+
+.block{
+  gap: 1.5rem;
 }

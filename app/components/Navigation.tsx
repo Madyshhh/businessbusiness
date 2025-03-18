@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 const Navigation: React.FC = () => {
     const [isMenuActive, setIsMenuActive] = useState(false);
@@ -33,7 +34,7 @@ const Navigation: React.FC = () => {
 
                 <div className={`navbar-brand ${isScrolled ? 'scrolled' : ''}`}>
                     <a className="navbar-item" href='#home'>
-                        Solutions
+                        <Image src="/images/logo-clear.png" className='logo' alt="Logo" width={300} height={50} />
                     </a>
                     <span
                         className={`navbar-burger ${isMenuActive ? 'is-active' : ''}`}
@@ -52,7 +53,7 @@ const Navigation: React.FC = () => {
                         <a className="navbar-item" href='#about' onClick={handleMenuItemClick}>About us</a>
                         <a className="navbar-item" href='#team' onClick={handleMenuItemClick}>Team</a>
                         <span className="navbar-item">
-                            <a className="button is-primary" href='#contact' onClick={handleMenuItemClick}>
+                            <a className="button is-primary is-responsive" href='#contact' onClick={handleMenuItemClick}>
                                 <span>Contact us</span>
                             </a>
                         </span>
