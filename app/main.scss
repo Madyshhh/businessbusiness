@@ -4,6 +4,11 @@
   font-size: 5rem;
 }
 
+.logo {
+  width: 100%;
+  // height: 80px;
+}
+
 /* section {
     height: 100vh;
     display: flex;
@@ -18,9 +23,12 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: top;
+  background-color: var(--bulma-body-background-color);
+}
 
-  /* scroll-snap-align: start; */
+.block{
+  width: 100%;
 }
 
 .hero-background {
@@ -36,7 +44,6 @@
   position: relative;
   width: 100%;
   height: 100vh;
-  /* Ensure it has a proper height */
 }
 
 .hero-overlay {
@@ -80,7 +87,7 @@
 }
 
 @media screen and (max-width: 1024px) {
-  .navbar-brand{
+  .navbar-brand {
     background-color: var(--bulma-body-background-color);
   }
 }
@@ -98,3 +105,14 @@
   color: var(--bulma-title-color);
   // font-weight: var();
 }
+
+
+.footer {
+  z-index: -10;
+  position: sticky;
+  bottom: 0;
+  height: 600px;
+}
+
+
+
