@@ -158,7 +158,7 @@ export default function ExampleForm() {
 
       <div className="field">
         <div className="control">
-          <button className="button is-primary is-responsive" type="submit">Submit</button>
+          <button className="button is-primary" type="submit">Submit</button>
         </div>
       </div>
     </form>

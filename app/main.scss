@@ -4,6 +4,27 @@
   font-size: 5rem;
 }
 
+.theme-toggle-button {
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  z-index: 10;
+}
+
+.theme-toggle-div {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  z-index: 1000;
+}
+
+.theme-toggle-button:hover,
+.social-icons a:hover {
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 .logo {
   width: 100%;
   // height: 80px;
@@ -21,14 +42,23 @@
 .section {
   min-height: 100vh;
   width: 100%;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: top;
   background-color: var(--bulma-body-background-color);
 }
 
-.block{
-  width: 100%;
+
+.block {
+  width: 60%;
+}
+
+.section-separator {
+  border-bottom: 1px solid #909090;
+  /* light grey or any color */
+  margin: 0 auto;
+  padding-top: 2px;
 }
 
 .hero-background {
@@ -70,6 +100,8 @@
   --navbar-item-background-a: 1%;
   // --bulma-navbar-item-img-max-height: 2rem;
   --bulma-navbar-burger-color: hsl(22deg, 80%, 62%);
+  margin-top: 45px;
+
 }
 
 .navbar-brand .scrolled {
@@ -86,21 +118,6 @@
   background-color: transparent;
 }
 
-@media screen and (max-width: 1024px) {
-  .navbar-brand {
-    background-color: var(--bulma-body-background-color);
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .navbar-item {
-    border-radius: 5px;
-    margin-left: 20px;
-    height: 2rem;
-    align-self: center;
-  }
-}
-
 .navbar-item {
   color: var(--bulma-title-color);
   // font-weight: var();
@@ -108,11 +125,158 @@
 
 
 .footer {
-  z-index: -10;
-  position: sticky;
   bottom: 0;
   height: 600px;
 }
 
 
 
+.has-text-centered.is-flex a {
+  display: inline-flex;
+  /* Ensures the link wraps tightly around the icon */
+  align-items: center;
+  /* Centers the icon vertically */
+  justify-content: center;
+  /* Centers the icon horizontally */
+  padding: 0;
+  /* Removes any default padding */
+  margin: 0;
+  /* Removes any default margin */
+  line-height: 0;
+  /* Prevents extra spacing around the icon */
+  text-decoration: none;
+  /* Removes underline from links */
+}
+
+// faq section
+.accordion-item {
+  border-bottom: 1px solid #ddd;
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 80px;
+}
+
+.accordion-body {
+  padding: 0rem 0;
+}
+
+.faq-answer {
+  padding-bottom: 20px;
+}
+
+.accordion-item.is-active .accordion-header .icon {
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+
+
+// pricing section
+#pricing {
+  background-color: var(--section-background);
+  padding: 3rem 1.5rem;
+
+  .block {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .box {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    &.has-background-gradient {
+      background: linear-gradient(135deg, #3273dc2e, #d1760028);
+      
+
+    }
+  }
+
+  .tag {
+    font-size: 0.9rem;
+    font-weight: bold;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      display: flex;
+      align-items: center;
+    }
+
+    i {
+      font-size: 0.9rem;
+    }
+  }
+
+  .trust-section {
+    margin-top: 2rem;
+
+    p {
+      color: #4a4a4a;
+    }
+  }
+}
+
+
+
+.responsive-icon {
+  font-size: 2.5rem;
+
+  @media (min-width: 576px) {
+    font-size: 3rem;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 4rem;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 4rem;
+  }
+}
+
+
+@media screen and (max-width: 1023px) {
+  .navbar-brand {
+    background-color: var(--bulma-body-background-color);
+  }
+
+  .block {
+    width: 100%;
+  }
+
+  .section {
+    width: 100%;
+    padding: 60px 0px;
+  }
+
+  .navbar {
+    margin-top: 0px;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .block {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .navbar-item {
+    border-radius: 5px;
+    margin-left: 20px;
+    height: 2rem;
+    align-self: center;
+  }
+
+}
