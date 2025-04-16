@@ -43,8 +43,8 @@
   --hero-title-color-light: hsl(0, 0%, 0%);
   --hero-subtitle-color-light: hsl(28, 62%, 4%);
 
-  --section-light-background: hsl(0, 0%, 96%);
-  --section-dark-background: rgb(22, 21, 47);
+  --section-light-background: hsl(247deg, 50%, 98%);
+  --section-dark-background: hsl(247deg, 50%, 7%);
 
 }
 

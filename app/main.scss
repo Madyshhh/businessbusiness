@@ -177,8 +177,6 @@
 // pricing section
 #pricing {
   background-color: var(--section-background);
-  padding: 3rem 1.5rem;
-
   .block {
     width: 100%;
     margin: 0 auto;
@@ -187,22 +185,29 @@
   .box {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-    &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-    }
-
     &.has-background-gradient {
-      background: linear-gradient(135deg, #3273dc2e, #d1760028);
-      
-
+      background: linear-gradient(135deg, #3273dc3f, #00d12a22);
     }
   }
 
-  .tag {
+  .popular-tag {
     font-size: 0.9rem;
     font-weight: bold;
+    position: absolute;
+    
+    left: 50%;
+    transform: translateX(-50%) translateY(-40px);
   }
+
+
+  .box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+
+
+
+
 
   ul {
     list-style: none;
@@ -221,9 +226,7 @@
   .trust-section {
     margin-top: 2rem;
 
-    p {
-      color: #4a4a4a;
-    }
+   
   }
 }
 
