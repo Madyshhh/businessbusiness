@@ -177,28 +177,51 @@
 // pricing section
 #pricing {
   background-color: var(--section-background);
+
   .block {
     width: 100%;
     margin: 0 auto;
+    padding: 1rem;
   }
 
-  .box {
+  .price-box {
+    background: var(--box-backgrounds);
+    backdrop-filter: blur(10px);
+    /* Blur effect for the glass look */
+    border: 0.5px solid var(--box-border);
+    /* Subtle border for the glass effect */
+    border-radius: 12px;
+    /* Rounded corners */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    /* Soft shadow for depth */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 
+    
+
+    &:hover {
+      transform: translateY(-5px);
+      /* Slight lift on hover */
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+      /* Enhanced shadow on hover */
+    }
+
     &.has-background-gradient {
-      background: linear-gradient(135deg, #3273dc3f, #00d12a22);
+      background: linear-gradient(135deg, rgba(50, 115, 220, 0.3), rgba(0, 209, 178, 0.3));
+      backdrop-filter: blur(15px);
+      /* Stronger blur for gradient background */
+    
     }
   }
+
 
   .popular-tag {
     font-size: 0.9rem;
     font-weight: bold;
     position: absolute;
-    
+
     left: 50%;
     transform: translateX(-50%) translateY(-40px);
   }
-
 
   .box:hover {
     transform: translateY(-5px);
@@ -226,7 +249,7 @@
   .trust-section {
     margin-top: 2rem;
 
-   
+
   }
 }
 
@@ -247,6 +270,14 @@
     font-size: 4rem;
   }
 }
+
+.glowing-text {
+  text-shadow: 0 0 1px rgba(3, 92, 3, 0.8), 
+               0 0 5px rgba(21, 119, 21, 0.6),
+               0 0 15px rgba(42, 199, 42, 0.4);
+  
+}
+
 
 
 @media screen and (max-width: 1023px) {

@@ -11,11 +11,13 @@ import ContactForm from './components/ContactForm';
 import CalendlyForm from './components/CalendlyWidget';
 import Footer from './components/Footer';
 import FAQSection from './components/FAQSection';
+import PricingSection from './components/PricingSection';
 
 import { CgWebsite } from "react-icons/cg";
 import { MdOutlineDomainVerification } from "react-icons/md";
 import { TbSeo } from "react-icons/tb";
 import { PiHandshake, PiFire, PiLink, PiCoffee, PiChartLineUp } from "react-icons/pi";
+import { option } from 'framer-motion/client';
 
 
 const containerVariants = {
@@ -233,176 +235,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section" id="pricing">
-        <div className="block info-container is-flex is-flex-direction-column is-align-items-center">
-          <FloatingText duration={1.0}>
-            <h2 className="title is-3 pt-6 pb-2 has-text-centered">Our pricing</h2>
-          </FloatingText>
-          <p className="subtitle is-5 has-text-centered mb-5">
-            Choose the perfect plan for your business needs. No hidden fees, just results.
-          </p>
-          <p className="has-text-centered">All our plans come with a 100% satisfaction guarantee. If you're not happy with the results, we'll work with you until you are.</p>
-
-          <p className="has-text-centered is-size-7 has-text-warning-on-scheme">Please remember that these are estimates, and the final cost will depend on the specific requirements and complexity of your unique vision.</p>
-          {/* Pricing Plans */}
-          <div className="columns is-multiline is-justify-content-center mt-5">
-            {[
-              {
-                title: "Starter",
-                upfrontCost: "£300",
-                monthlyOptions: [
-                  { duration: "12-Month Contract", price: "+ £40 pm", total: "£780" },
-                  { duration: "20-Month Contract", price: "+ £35 pm", total: "£1000", note: "Save £100!" },
-                ],
-                description: "Individuals, startups, small businesses needing a basic online presence, blog, or informational website.",
-                features: [
-                  "One page website",
-                  "5 sections",
-                  "Mobile ready (responsive design)",
-                  "Basic SEO",
-                  "Social media links",
-                  "Choice of brand colours",
-                  "Basic Security Features",
-
-                ],
-                pages: [
-                  "Landing section",
-                  "About us",
-                  "Team",
-                  "Services",
-                  "Contact us",
-                ],
-                isPopular: false,
-              },
-              {
-                title: "Professional",
-                price: "$199/month",
-                features: [
-                  "Custom website design",
-                  "Up to 5 pages",
-                  "SEO optimization",
-                  "Priority email support",
-                ],
-                isPopular: true, // Highlight this plan
-              },
-              {
-                title: "Business",
-                price: "$299/month",
-                features: [
-                  "Advanced website design",
-                  "Up to 10 pages",
-                  "SEO & analytics",
-                  "Phone & email support",
-                ],
-                isPopular: false,
-              },
-              
-              {
-                title: "Custom",
-                price: "Contact us",
-                features: [
-                  "Tailored solutions",
-                  "Custom integrations",
-                  "Full-stack development",
-                  "Ongoing support",
-                ],
-                isPopular: false,
-              },
-            ].map((plan, index) => (
-              <div
-                key={index}
-                className={`column is-one-quarter-desktop is-half-tablet ${plan.isPopular ? "is-relative" : ""
-                  }`}
-              >
-                <div
-                  className={`box has-text-centered is-flex is-flex-direction-column is-align-content-center ${plan.isPopular ? "has-background-gradient" : ""
-                    }`}
-                  style={{
-                    gap: "0.5rem",
-                    border: plan.isPopular ? "2px solid #3273dc" : "1px solid #ddd",
-                    boxShadow: plan.isPopular
-                      ? "0 4px 15px rgba(50, 115, 220, 0.3)"
-                      : "0 2px 10px rgba(0, 0, 0, 0.1)",
-                  }}
-                >
-                  {plan.isPopular && (
-                    <span
-                      className="tag popular-tag is-primary is-medium is-rounded"
-
-                    >
-                      Most Popular
-                    </span>
-                  )}
-                  <h3 className="title is-4">{plan.title}</h3>
-                  <p className="subtitle is-5 has-text-primary">{plan.upfrontCost}</p>
-                  {plan.upfrontCost && (
-                    <>
-                      <div className=" is-flex is-flex-direction-column is-justify-content-space-between is-size-7 has-text-left">
-                        {plan.monthlyOptions.map((option, i) => (
-                            <span
-                            key={i}
-                            className="is-flex is-flex-direction-row is-align-items-center  p-2 mb-2"
-                            style={{
-                              borderRadius: "5px",
-                              border: "1px solid #3273dc",
-                              boxShadow: "0 2px 5px rgba(50, 115, 220, 0.2)",
-                            }}
-                            >
-                            <span className="has-text-weight-bold">{option.duration}:</span>
-                            <span className="has-text-primary has-text-weight-bold">{option.price}</span>
-                            {option.note && (
-                              <span className="tag is-success is-light ml-2">
-                              {option.note}
-                              </span>
-                            )}
-                            </span>
-                          
-                        ))}
-                      </div>
-                    </>
-                  )}
-
-                  <p className="has-text-left">{plan.description}</p>
-                  <ul className="is-size-6 has-text-left">
-                    {plan.features.map((feature, i) => (
-                      <li key={i} className="mb-2">
-                        <i className="fas fa-check has-text-success mr-2"></i>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                  <p className="has-text-primary-bold has-text-left">{index === 0 ? "Sections included:" : "Pages included:"}</p>
-                  <ul className="is-size-6 has-text-left">
-                    {plan.pages?.map((page, i) => (
-                      <li key={i} className="mb-2">
-                        <i className="fas fa-file-alt has-text-info mr-2 ml-3"></i>
-                        {page}
-                      </li>
-                    ))}
-                  </ul>
-                  <a
-                    href="#contact"
-                    className={`button is-fullwidth ${plan.isPopular ? "is-primary" : "is-info"
-                      }`}
-                  >
-                    {plan.price === "Contact us" ? "Get a Quote" : "Choose Plan"}
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Trust-Building Section */}
-          <div className="trust-section mt-6">
-            <p className="has-text-centered is-size-5">
-              <strong>100% Satisfaction Guarantee</strong> – We’re committed to delivering results you’ll love.
-            </p>
-            <p className="has-text-centered is-size-6 mt-2">
-              Trusted by <strong>100+ businesses</strong> worldwide.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PricingSection />
 
       <section className="section" id='contact'>
 

@@ -46,6 +46,10 @@
   --section-light-background: hsl(247deg, 50%, 98%);
   --section-dark-background: hsl(247deg, 50%, 7%);
 
+  --box-backgrounds-light: linear-gradient(135deg, rgba(216, 216, 216, 0.175), rgba(87, 87, 87, 0.127));
+  --box-backgrounds-dark: linear-gradient(135deg, rgba(17, 17, 17, 0.175), rgba(58, 58, 58, 0.127));
+  --box-border-light: rgba(255, 255, 255, 0.3);
+  --box-border-dark:  rgba(52, 52, 52, 0.3);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -56,6 +60,8 @@
     --hero-subtitle-color: var(--hero-subtitle-color-dark);
     --loader-background: var(--loader-background-dark);
     --section-background: var(--section-dark-background);
+    --box-backgrounds: var(--box-backgrounds-dark);
+    --box-border: var(--box-border-dark);
   }
 }
 
@@ -67,6 +73,8 @@
     --hero-subtitle-color: var(--hero-subtitle-color-light);
     --loader-background: var(--loader-background-light);
     --section-background: var(--section-light-background);
+    --box-backgrounds: var(--box-backgrounds-light);
+    --box-border: var(--box-border-light);
   }
 }
 
@@ -77,6 +85,8 @@
     --hero-title-color: var(--hero-title-color-dark);
     --hero-subtitle-color: var(--hero-subtitle-color-dark);
     --section-background: var(--section-dark-background);
+    --box-backgrounds: var(--box-backgrounds-dark);
+    --box-border: var(--box-border-dark);
 }
 
 [data-theme="light"] {
@@ -86,6 +96,8 @@
     --hero-title-color: var(--hero-title-color-light);
     --hero-subtitle-color: var(--hero-subtitle-color-light);
     --section-background: var(--section-light-background);
+    --box-backgrounds: var(--box-backgrounds-light);
+    --box-border: var(--box-border-light);
 }
 
 html {
