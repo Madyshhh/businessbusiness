@@ -2,8 +2,40 @@
 
 import React from "react";
 import FloatingText from "./FloatingText";
+import { motion } from "framer-motion";
 
 const PricingSection = () => {
+
+    const handleContactRedirect = (planTitle: string) => {
+        if (typeof window !== "undefined") {
+            // Store the selected plan in localStorage
+            localStorage.setItem("selectedPlan", planTitle);
+      
+            // Navigate to the contact section
+            window.location.hash = "contact";
+      
+            // Scroll to the contact section
+            const contactSection = document.getElementById("contact");
+            if (contactSection) {
+              contactSection.scrollIntoView({ behavior: "smooth" });
+            }
+          }
+      };
+    
+    const containerVariants = {
+        hidden: { opacity: 1 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.2, // Increased staggerChildren for slower delay between each box
+            },
+        },
+    };
+
+    const cardVariants = {
+        hidden: { opacity: 0, scale: 0.9 },
+        visible: { opacity: 1, scale: 1, transition: { duration: 0.4 } },
+    };
     return (
         <section className="section" id="pricing">
             <div className="block info-container is-flex is-flex-direction-column is-align-items-center">
@@ -13,11 +45,17 @@ const PricingSection = () => {
                 <p className="subtitle is-5 has-text-centered mb-5">
                     Choose the perfect plan for your business needs. No hidden fees, just results.
                 </p>
-                <p className="has-text-centered">All our plans come with a 100% satisfaction guarantee. If you're not happy with the results, we'll work with you until you are.</p>
+                <p className="has-text-centered">All our plans come with a 100% satisfaction guarantee. If you`&apos;re not happy with the results, we`&apos;ll work with you until you are.</p>
 
                 <p className="has-text-centered is-size-7 has-text-warning-bold">Please remember that these are estimates, and the final cost will depend on the specific requirements and complexity of your unique vision.</p>
                 {/* Pricing Plans */}
-                <div className="columns is-multiline is-justify-content-center mt-5 is-3">
+                <motion.div
+                    className="columns is-multiline is-justify-content-center mt-5"
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: false, amount: 0.001 }} // Adjust viewport settings
+                >
                     {[
                         {
                             title: "Starter",
@@ -147,7 +185,7 @@ const PricingSection = () => {
                         plan.title === "Custom" ? (
                             <div
                                 key={index}
-                                className="column"
+                                className="column is-four-fifths-desktop is-full-mobile"
                             >
                                 <div className="box price-box has-text-centered is-flex is-flex-direction-column is-align-content-center" style={{ gap: "0.7rem" }}>
                                     <h3 className="title is-4 has-text-left mb-0">
@@ -187,8 +225,8 @@ const PricingSection = () => {
                                         *This package is fully customizable.
                                     </p>
                                     <div
-                                        onClick={() => window.location.href = '#contact'}
                                         className='button has-text-white-on-scheme '
+                                        onClick={() => handleContactRedirect(plan.title)}
                                     >
                                         Get a quote
                                     </div>
@@ -196,11 +234,15 @@ const PricingSection = () => {
                                 </div>
 
                             </div>
+
                         ) : (
-                            <div
+
+                            <motion.div
                                 key={index}
-                                className={`column is-desktop ${plan.isPopular ? "is-relative" : ""
-                                    }`}
+                                className="column is-one-third-desktop is-half-tablet"
+                                variants={cardVariants}
+                                transition={{ duration: 0.5, ease: 'easeOut' }}
+                                viewport={{ once: true }}
                             >
                                 <div
                                     className={`box price-box has-text-centered is-flex is-flex-direction-column is-align-content-center ${plan.isPopular ? "has-background-gradient has-text-white-bold" : ""
@@ -243,7 +285,7 @@ const PricingSection = () => {
                                                 key={i}
                                                 className="is-flex is-flex-direction-column is-justify-content-space-left is-flex-wrap-wrap"
                                             >
-                                                <span className="is-size-7 is-flex is-align-items-center">
+                                                <span className="is-size-7 is-flex is-align-items-center is-flex-wrap-wrap">
                                                     +&nbsp;
                                                     <span className="has-text-success-bold">£</span>
                                                     <span className="has-text-weight-bold has-text-success-bold is-size-6">
@@ -328,7 +370,7 @@ const PricingSection = () => {
                                     </div>
 
                                     <div
-                                        onClick={() => window.location.href = '#contact'}
+                                        onClick={() => handleContactRedirect(plan.title)}
                                         className={`button ${plan.title === "Starter"
                                             ? "has-text-warning-on-scheme" // Yellow for Starter
                                             : plan.title === "Professional"
@@ -343,10 +385,13 @@ const PricingSection = () => {
 
                                 </div>
 
-                            </div>
+                            </motion.div>
+
                         )
                     ))}
-                </div>
+
+                </motion.div>
+
 
                 {/* Trust-Building Section */}
                 <div className="trust-section">
@@ -357,8 +402,10 @@ const PricingSection = () => {
                         Trusted by <strong>100+ businesses</strong> worldwide.
                     </p>
                 </div>
+
             </div>
-        </section>
+
+        </section >
     );
 };
 

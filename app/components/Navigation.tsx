@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import ThemeToggle from './ThemeToggle';
 import { FaFacebookSquare, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import { FaPhone, FaEnvelope } from 'react-icons/fa';
@@ -47,7 +48,7 @@ const Navigation: React.FC = () => {
                         </span>
                         <span className='is-flex is-align-items-center' style={{ gap: '0.5rem' }}>
                             <FaLocationDot className='has-text-primary-on-scheme' style={{ height: '100%' }} />
-                            <a className='has-text-current' href="https://goo.gl/maps/7qk2i8n3j9F2" target="_blank" rel="noopener noreferrer">Stirling</a>
+                            <a className='has-text-current' href="https://g.co/kgs/WhmKQkk" target="_blank" rel="noopener noreferrer">Stirling</a>
                         </span>
 
                     </div>
@@ -69,9 +70,9 @@ const Navigation: React.FC = () => {
 
             <header className="navbar is-fixed-top ">
                 <div className={`navbar-brand ${isScrolled ? 'scrolled' : ''}`}>
-                    <a className="navbar-item" href='/#home'>
+                    <Link href="/#home" className="navbar-item">
                         <Image src="/images/logo-clear.png" className='logo' alt="Logo" width={300} height={50} />
-                    </a>
+                    </Link>
                     <span className='navbar-item ml-auto is-hidden-desktop'><ThemeToggle /></span>
                     <span
                         className={`navbar-burger m-0 mr-2 ${isMenuActive ? 'is-active' : ''}`}
@@ -82,21 +83,21 @@ const Navigation: React.FC = () => {
                         <span></span>
                         <span></span>
                         <span></span>
-                        
+
                     </span>
-                    
+
                 </div>
 
                 <div id="navbarMenuHeroC" className={`navbar-menu  py-1 ${isScrolled ? 'scrolled' : ''} ${isMenuActive ? 'is-active' : ''} `}>
                     <div className="navbar-end">
-                        <a className="navbar-item" href='/#about' onClick={handleMenuItemClick}>About us</a>
-                        <a className="navbar-item" href='/#services' onClick={handleMenuItemClick}>Services</a>
-                        <a className="navbar-item" href='/#faq' onClick={handleMenuItemClick}>FAQ</a>
+                        <Link href="/#about" className="navbar-item" onClick={handleMenuItemClick}>About us</Link>
+                        <Link href="/#services" className="navbar-item" onClick={handleMenuItemClick}>Services</Link>
+                        <Link href="/#pricing" className="navbar-item" onClick={handleMenuItemClick}>Pricing</Link>
+                        <Link href="/#faq" className="navbar-item" onClick={handleMenuItemClick}>FAQ</Link>
                         <span className="navbar-item">
-                            <a className="button is-primary" href='/#contact' onClick={handleMenuItemClick}>
+                            <Link href="/#contact" className="button is-primary" onClick={handleMenuItemClick}>
                                 <span>Contact us</span>
-                            </a>
-
+                            </Link>
                         </span>
                         <span className='navbar-item ml-auto is-hidden-touch'><ThemeToggle /></span>
                     </div>

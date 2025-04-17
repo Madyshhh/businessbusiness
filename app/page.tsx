@@ -14,10 +14,8 @@ import FAQSection from './components/FAQSection';
 import PricingSection from './components/PricingSection';
 
 import { CgWebsite } from "react-icons/cg";
-import { MdOutlineDomainVerification } from "react-icons/md";
 import { TbSeo } from "react-icons/tb";
 import { PiHandshake, PiFire, PiLink, PiCoffee, PiChartLineUp } from "react-icons/pi";
-import { option } from 'framer-motion/client';
 
 
 const containerVariants = {
@@ -65,7 +63,7 @@ export default function Home() {
                   </FloatingText>
                   <FloatingText duration={0.8}>
                     <p className="subtitle is-5 hero-subtitle is-family-secondary">
-                      Custom software solutions tailored to your business needs. <br />We don't just build websites; we create robust applications, mobile experiences, and innovative software that allows your company to growth.                    </p>
+                      Custom software solutions tailored to your business needs. <br />We don&apos;t just build websites, we create robust applications, mobile experiences, and innovative software that allows your company to growth.</p>
                   </FloatingText>
                 </Parallax>
                 <Parallax speed={18}>
@@ -96,9 +94,9 @@ export default function Home() {
 
           <h3 className='subtitle has-text-link-on-scheme is-5'>Hey there!</h3>
 
-          <p>We're the team behind Devkalm, and we're genuinely excited you're checking us out. We're not your typical, ordinary web folks. Sure, we build awesome websites – and we're big fans of WordPress and Shopify for getting things done efficiently. But what really gets our gears turning is taking those wild, ambitious software ideas you have brewing and actually building them. Think of us as your digital architects, ready to construct anything you can imagine.</p>
-          <p>Maybe you've been there – that moment when you have a brilliant idea for an app or a custom piece of software, but you're not sure where to even begin. That's exactly where Devkalm comes in.</p>
-          <p>We started this because we saw a gap: a need for developers who could handle the full spectrum, from simple websites to complex applications, all with a focus on doing it right – and doing it securely. We're passionate about helping people turn those "what ifs" into "we did it!" moments. So, grab a coffee and relax – we've got the code covered.</p>
+          <p>We&apos;re the team behind Devkalm, and we&apos;re genuinely excited you&apos;re checking us out. We&apos;re not your typical, ordinary web folks. Sure, we build awesome websites – and we&apos;re big fans of WordPress and Shopify for getting things done efficiently. But what really gets our gears turning is taking those wild, ambitious software ideas you have brewing and actually building them. Think of us as your digital architects, ready to construct anything you can imagine.</p>
+          <p>Maybe you&apos;ve been there – that moment when you have a brilliant idea for an app or a custom piece of software, but you&apos;re not sure where to even begin. That&apos;s exactly where Devkalm comes in.</p>
+          <p>We started this because we saw a gap: a need for developers who could handle the full spectrum, from simple websites to complex applications, all with a focus on doing it right – and doing it securely. We&apos;re passionate about helping people turn those &quot;what ifs&quot; into &quot;we did it!&quot; moments. So, grab a coffee and relax – we&apos;ve got the code covered.</p>
           <h3 className="subtitle is-5 has-text-left">Why choose us?</h3>
 
           <p>We get it – there are tons of developers out there. So why should you pick us? Well, we believe in a few key things:</p>
@@ -149,7 +147,7 @@ export default function Home() {
 
           <h3 className="subtitle is-5">So, what can we actually do? Pretty much anything digital.</h3>
 
-          <p>Okay, maybe "anything" sounds a bit bold, but we mean it. While we definitely have a soft spot for crafting beautiful and effective websites using WordPress and Shopify (they're powerful tools!), our real playground is in building custom software and applications from the ground up.</p>
+          <p>Okay, maybe &quot;anything&quot; sounds a bit bold, but we mean it. While we definitely have a soft spot for crafting beautiful and effective websites using WordPress and Shopify (they&apos;re powerful tools!), our real playground is in building custom software and applications from the ground up.</p>
 
           {/* <p>Here's the deal: our backgrounds are in Software Development with a strong emphasis on Cyber Security. That means we're not just about writing code; we're about writing secure code. We think about potential threats from the get-go, so you can rest easy knowing your project is in safe hands.</p> */}
 
@@ -157,19 +155,19 @@ export default function Home() {
           <h3 className="subtitle is-5">How we work</h3>
 
 
-          <p>We're not the kind of developers who just disappear into a coding cave. We believe in actually talking to you, understanding your vision inside and out, and working together every step of the way. Your success is our success, and we're genuinely invested in making your project a win. We're all about clear communication, being transparent, and making the whole process as smooth (and maybe even a little fun!) as possible. <br />And yes, we also love a good cup
+          <p>We&apos;re not the kind of developers who just disappear into a coding cave. We believe in actually talking to you, understanding your vision inside and out, and working together every step of the way. Your success is our success, and we&apos;re genuinely invested in making your project a win. We&apos;re all about clear communication, being transparent, and making the whole process as smooth (and maybe even a little fun!) as possible. <br />And yes, we also love a good cup
             of <span className="icon-text">
               <span className="icon">
                 <i className="fas fa-coffee"></i>
               </span>
               <span>coffee</span>
-            </span> while we're coding!</p>
+            </span> while we&apos;re coding!</p>
 
-          <h3 className="subtitle is-5">Let's chat!</h3>
-          <p>Got a project brewing? Or maybe just a coffee-fueled idea you want to bounce off someone? We're all ears! Drop us a line – we'd love to chat about how we can help you turn your vision into a reality.</p>
+          <h3 className="subtitle is-5">Let&apos;s chat!</h3>
+          <p>Got a project brewing? Or maybe just a coffee-fueled idea you want to bounce off someone? We&apos;re all ears! Drop us a line – we&apos;d love to chat about how we can help you turn your vision into a reality.</p>
           <FloatingText duration={1.0}>
             {/* <a className='button mt-4 is-info has-text-info-invert'  href='#contact'>Let's grab a virtual coffee (or an actual one if you're local!) and talk. </a> */}
-            <button className='button mt-4 is-info has-text-info-invert' style={{ whiteSpace: 'normal', }} onClick={() => window.location.href = '#contact'}>Let's grab a virtual coffee (or an actual one if you're local!) and talk. </button>
+            <button className='button mt-4 is-info has-text-info-invert' style={{ whiteSpace: 'normal', }} onClick={() => window.location.href = '#contact'}>Let&apos;s grab a virtual coffee (or an actual one if you&apos;re local!) and talk. </button>
           </FloatingText>
         </div>
 
@@ -181,9 +179,9 @@ export default function Home() {
             <h2 className="title is-3 pt-6 pb-2">Services</h2>
           </FloatingText>
           <FloatingText duration={1.0}>
-            <h3 className='subtitle has-text-link-on-scheme'>Your vision, Our expertise: Software development without limits.</h3>
+            <h3 className='subtitle has-text-link-on-scheme'>Your vision, our expertise: Software development without limits.</h3>
           </FloatingText>
-          <p>At Devkalm, we believe that technology should empower your vision, not restrict it. That's why we offer a comprehensive range of software development services, going beyond the ordinary to create truly custom solutions. Whether you have a groundbreaking app idea, need specialized business software, or require a powerful online presence, our team has the skills and experience to bring your concepts to life.</p>
+          <p>At Devkalm, we believe that technology should empower your vision, not restrict it. That&apos;s why we offer a comprehensive range of software development services, going beyond the ordinary to create truly custom solutions. Whether you have a groundbreaking app idea, need specialized business software, or require a powerful online presence, our team has the skills and experience to bring your concepts to life.</p>
           <motion.div
             className="columns is-multiline is-flex is-justify-content-center is-align-items-stretch"
             variants={containerVariants}
@@ -214,11 +212,7 @@ export default function Home() {
             initial="hidden"
             whileInView="visible"
           >
-            <ServicesBox
-              icon={<CgWebsite className="has-text-primary responsive-icon" />}
-              title="WordPress Development"
-              description="WordPress is a versatile and powerful platform, and Devkalm's developers can use its full potential to create stunning and functional websites. Whether you need a simple blog, a complex business website, or an e-commerce store, we can build a WordPress solution tailored to your needs, with custom themes, plugins, and integrations. We ensure your WordPress site is not only visually appealing but also secure and optimized for search engines."
-            />
+            
             <ServicesBox
               icon={<CgWebsite className="has-text-primary responsive-icon" />}
               title="Shopify Development"

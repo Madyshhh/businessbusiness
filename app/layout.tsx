@@ -5,11 +5,12 @@ import "./main.scss";
 import { Analytics } from "@vercel/analytics/react"
 import { Providers } from './providers';
 import Loader from './components/Loader';
+import CookieConsent from './components/CookieConsent';
 
 
 
 export const metadata: Metadata = {
-  title: "Devkalm",
+  title: "Devkalm - Software Development Company",
   description: "Devkalm is a software development company that can develop websites, web applications, and mobile applications for your business.",
 };
 
@@ -34,6 +35,7 @@ export default function RootLayout({
       >
         <Loader />
         <Providers>{children}</Providers>
+        <CookieConsent />
         <Analytics />
       </body>
     </html>

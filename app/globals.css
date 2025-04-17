@@ -50,6 +50,9 @@
   --box-backgrounds-dark: linear-gradient(135deg, rgba(17, 17, 17, 0.175), rgba(58, 58, 58, 0.127));
   --box-border-light: rgba(255, 255, 255, 0.3);
   --box-border-dark:  rgba(52, 52, 52, 0.3);
+
+  --service-card-background-light: linear-gradient(135deg, hsla(23, 61%, 33%, 0.1),  hsla(224, 100%, 70%, 0.1) );
+  --service-card-background-dark: linear-gradient(135deg, hsla(23, 100%, 15%, 0.1),  hsla(224, 50%, 39%, 0.1) );
 }
 
 @media (prefers-color-scheme: dark) {
@@ -62,6 +65,7 @@
     --section-background: var(--section-dark-background);
     --box-backgrounds: var(--box-backgrounds-dark);
     --box-border: var(--box-border-dark);
+    --service-card-background: var(--service-card-background-dark);
   }
 }
 
@@ -75,6 +79,7 @@
     --section-background: var(--section-light-background);
     --box-backgrounds: var(--box-backgrounds-light);
     --box-border: var(--box-border-light);
+    --service-card-background: var(--service-card-background-light);
   }
 }
 
@@ -87,6 +92,7 @@
     --section-background: var(--section-dark-background);
     --box-backgrounds: var(--box-backgrounds-dark);
     --box-border: var(--box-border-dark);
+    --service-card-background: var(--service-card-background-dark);
 }
 
 [data-theme="light"] {
@@ -98,6 +104,7 @@
     --section-background: var(--section-light-background);
     --box-backgrounds: var(--box-backgrounds-light);
     --box-border: var(--box-border-light);
+    --service-card-background: var(--service-card-background-light);
 }
 
 html {
