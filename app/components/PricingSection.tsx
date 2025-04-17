@@ -40,7 +40,7 @@ const PricingSection = () => {
         <section className="section" id="pricing">
             <div className="block info-container is-flex is-flex-direction-column is-align-items-center">
                 <FloatingText duration={1.0}>
-                    <h2 className="title is-3 pt-6 pb-2 has-text-centered">Our pricing</h2>
+                    <h2 className="title is-3 pt-6 pb-2 has-text-centered">Our website development pricing</h2>
                 </FloatingText>
                 <p className="subtitle is-5 has-text-centered mb-5">
                     Choose the perfect plan for your business needs. No hidden fees, just results.
