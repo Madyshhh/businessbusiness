@@ -45,7 +45,7 @@ const PricingSection = () => {
                 <p className="subtitle is-5 has-text-centered mb-5">
                     Choose the perfect plan for your business needs. No hidden fees, just results.
                 </p>
-                <p className="has-text-centered">All our plans come with a 100% satisfaction guarantee. If you`&apos;re not happy with the results, we`&apos;ll work with you until you are.</p>
+                <p className="has-text-centered">All our plans come with a 100% satisfaction guarantee. If you&apos;re not happy with the results, we&apos;ll work with you until you are.</p>
 
                 <p className="has-text-centered is-size-7 has-text-warning-bold">Please remember that these are estimates, and the final cost will depend on the specific requirements and complexity of your unique vision.</p>
                 {/* Pricing Plans */}
@@ -395,12 +395,8 @@ const PricingSection = () => {
 
                 {/* Trust-Building Section */}
                 <div className="trust-section">
-                    <p className="has-text-centered is-size-5">
-                        <strong>100% Satisfaction Guarantee</strong> – We’re committed to delivering results you’ll love.
-                    </p>
-                    <p className="has-text-centered is-size-6 mt-2">
-                        Trusted by <strong>100+ businesses</strong> worldwide.
-                    </p>
+                   
+                   
                 </div>
 
             </div>

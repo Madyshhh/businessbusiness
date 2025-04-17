@@ -50,10 +50,10 @@ const CookieConsent: React.FC = () => {
             </Link>
           </p>
           <div className="buttons is-centered mt-3">
-            <button className="button is-primary" onClick={handleAccept}>
+            <button className="button is-small is-primary" onClick={handleAccept}>
               Accept
             </button>
-            <button className="button is-light" onClick={handleDecline}>
+            <button className="button is-small is-light" onClick={handleDecline}>
               Decline
             </button>
           </div>
