@@ -179,7 +179,7 @@ export default function ExampleForm() {
           </label>
         </div>
         <p className="help">
-          You agree that your data from the form will be collected and processed to answer your request. Detailed information on the handling of user data can be found in our data protection declaration.
+          You agree that your data from the form will be collected and processed to answer your request. You can revoke your consent at any time by sending an email to us.
         </p>
       </div>
 
