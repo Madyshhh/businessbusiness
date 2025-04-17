@@ -44,7 +44,10 @@ const Navigation: React.FC = () => {
                         </span>
                         <span className='is-flex is-align-items-center' style={{ gap: '0.5rem' }}>
                             <FaEnvelope className='has-text-primary-on-scheme' style={{ height: '100%' }} />
-                            <a className='has-text-current' href="mailto:info@devkalm.com">info@devkalm.com</a>
+                            {/* <a className='has-text-current' href="mailto:info@devkalm.com">info@devkalm.com</a> */}
+                            <Link href="/#contact" className="has-text-current" onClick={handleMenuItemClick}>
+                                <span>info@devkalm.com</span>
+                            </Link>
                         </span>
                         <span className='is-flex is-align-items-center' style={{ gap: '0.5rem' }}>
                             <FaLocationDot className='has-text-primary-on-scheme' style={{ height: '100%' }} />
@@ -109,17 +112,20 @@ const Navigation: React.FC = () => {
                         </span>
                         <span className='is-flex is-align-items-center' style={{ gap: '0.5rem' }}>
                             <FaEnvelope className='has-text-primary-on-scheme' style={{ height: '100%' }} />
-                            <a className='has-text-current' href="mailto:info@devkalm.com">info@devkalm.com</a>
+                            {/* <a className='has-text-current' href="mailto:info@devkalm.com">info@devkalm.com</a> */}
+                            <Link href="/#contact" className="has-text-current" onClick={handleMenuItemClick}>
+                                <span>info@devkalm.com</span>
+                            </Link>
                         </span>
                         <span className='is-flex is-align-items-center' style={{ gap: '0.5rem' }}>
                             <FaLocationDot className='has-text-primary-on-scheme' style={{ height: '100%' }} />
                             <a className='has-text-current' href="https://goo.gl/maps/7qk2i8n3j9F2" target="_blank" rel="noopener noreferrer">Stirling</a>
                         </span>
                         <div className="social-icons is-flex" style={{ gap: '0.5rem' }}>
-                            <a href="https://www.facebook.com/devkalm" target="_blank" rel="noopener noreferrer" style={{ height: '30px' }}>
+                            <a href="https://www.facebook.com/profile.php?id=61575318331032" target="_blank" rel="noopener noreferrer" style={{ height: '30px' }}>
                                 <FaFacebookSquare style={{ height: '100%' }} color="#4267B2" />
                             </a>
-                            <a href="https://www.instagram.com/devkalm/" target="_blank" rel="noopener noreferrer" style={{ height: '30px' }}>
+                            <a href="https://www.instagram.com/devkalm_ltd/" target="_blank" rel="noopener noreferrer" style={{ height: '30px' }}>
                                 <FaInstagram style={{ height: '100%' }} color="#E1306C" />
                             </a>
                             <a href="https://www.linkedin.com/company/devkalm" target="_blank" rel="noopener noreferrer" style={{ height: '30px' }}>

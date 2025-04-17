@@ -33,7 +33,7 @@ export default function Footer() {
             <div className="container py-6">
                 <div className="columns is-multiline">
                     {/* Company Info */}
-                    <div className="column is-one-third">
+                    <div className="column is-one-third is-hidden-touch">
                         <Image src="/images/logo.png" alt="Devkalm Logo" width={200} height={80} />
                         <p className="mt-4">
                             Devkalm specializes in building websites and web applications for businesses and individuals. We focus on delivering high-quality, secure, and scalable solutions tailored to your needs.
@@ -75,7 +75,10 @@ export default function Footer() {
                             </li>
                             <li className="is-flex is-align-items-center mb-2">
                                 <FaEnvelope className="mr-2" />
-                                <a href="mailto:info@devkalm.com" className="has-text-white-bold">info@devkalm.com</a>
+                                {/* <a href="mailto:info@devkalm.com" className="has-text-white-bold">info@devkalm.com</a> */}
+                                <Link href="/#contact" className="has-text-current">
+                                <span>info@devkalm.com</span>
+                            </Link>
                             </li>
                             <li className="is-flex is-align-items-center">
                                 <FaLocationDot className="mr-2" size={30}/>
@@ -85,7 +88,7 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <hr className="has-background-light" />
+                <hr className="has-background-bold" />
 
                 {/* Social Media */}
                 <div className="is-flex is-justify-content-center mt-4" style={{ gap: '1rem' }}>
