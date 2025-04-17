@@ -1,5 +1,7 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css";
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import 'bulma/css/bulma.min.css';
+
 
 
 :root {
@@ -27,17 +29,30 @@
   --bulma-scheme-h: 247;
   --bulma-scheme-s: 50%;
   --bulma-burger-h: 22deg;
+
   --bulma-title-color-dark: hsl(221deg, 14%, 94%); /* Dark scheme color */
   --bulma-title-color-light: hsl(223, 14%, 10%);
   --bulma-family-primary: Manrope, Inter, Roboto, SF Pro, Segoe UI, Oxygen, Ubuntu, Helvetica Neue, Helvetica, Arial, sans-serif;
 
-  --hero-overlay-color: rgba(2, 1, 29, 0.7); /* Default overlay color */
   --hero-overlay-color-dark: rgba(2, 1, 29, 0.7); /* Dark scheme overlay color */
-  --hero-overlay-color-light: rgba(255, 240, 221, 0.596); 
+  --hero-overlay-color-light: rgba(255, 255, 255, 0.864); 
+
   --hero-title-color-dark: hsl(33, 100%, 94%);
   --hero-subtitle-color-dark: hsl(0, 0%, 100%);
-  --hero-title-color-light: hsl(30, 100%, 2%);
-  --hero-subtitle-color-light: hsl(29, 62%, 12%);
+
+  --hero-title-color-light: hsl(0, 0%, 0%);
+  --hero-subtitle-color-light: hsl(28, 62%, 4%);
+
+  --section-light-background: hsl(247deg, 50%, 98%);
+  --section-dark-background: hsl(247deg, 50%, 7%);
+
+  --box-backgrounds-light: linear-gradient(135deg, rgba(216, 216, 216, 0.175), rgba(87, 87, 87, 0.127));
+  --box-backgrounds-dark: linear-gradient(135deg, rgba(17, 17, 17, 0.175), rgba(58, 58, 58, 0.127));
+  --box-border-light: rgba(255, 255, 255, 0.3);
+  --box-border-dark:  rgba(52, 52, 52, 0.3);
+
+  --service-card-background-light: linear-gradient(135deg, hsla(23, 61%, 33%, 0.1),  hsla(224, 100%, 70%, 0.1) );
+  --service-card-background-dark: linear-gradient(135deg, hsla(23, 100%, 15%, 0.1),  hsla(224, 50%, 39%, 0.1) );
 }
 
 @media (prefers-color-scheme: dark) {
@@ -45,7 +60,12 @@
     --bulma-title-color: var(--bulma-title-color-dark);
     --hero-overlay-color: var(--hero-overlay-color-dark);
     --hero-title-color: var(--hero-title-color-dark);
-    --hero-subtitle-color: var(--hero-subtitle-color-dark);    
+    --hero-subtitle-color: var(--hero-subtitle-color-dark);
+    --loader-background: var(--loader-background-dark);
+    --section-background: var(--section-dark-background);
+    --box-backgrounds: var(--box-backgrounds-dark);
+    --box-border: var(--box-border-dark);
+    --service-card-background: var(--service-card-background-dark);
   }
 }
 
@@ -55,22 +75,69 @@
     --hero-overlay-color: var(--hero-overlay-color-light);
     --hero-title-color: var(--hero-title-color-light);
     --hero-subtitle-color: var(--hero-subtitle-color-light);
+    --loader-background: var(--loader-background-light);
+    --section-background: var(--section-light-background);
+    --box-backgrounds: var(--box-backgrounds-light);
+    --box-border: var(--box-border-light);
+    --service-card-background: var(--service-card-background-light);
   }
 }
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-} */
+[data-theme="dark"] {
 
+    --bulma-title-color: var(--bulma-title-color-dark);
+    --hero-overlay-color: var(--hero-overlay-color-dark);
+    --hero-title-color: var(--hero-title-color-dark);
+    --hero-subtitle-color: var(--hero-subtitle-color-dark);
+    --section-background: var(--section-dark-background);
+    --box-backgrounds: var(--box-backgrounds-dark);
+    --box-border: var(--box-border-dark);
+    --service-card-background: var(--service-card-background-dark);
+}
+
+[data-theme="light"] {
+ 
+    --bulma-title-color: var(--bulma-title-color-light);
+    --hero-overlay-color: var(--hero-overlay-color-light);
+    --hero-title-color: var(--hero-title-color-light);
+    --hero-subtitle-color: var(--hero-subtitle-color-light);
+    --section-background: var(--section-light-background);
+    --box-backgrounds: var(--box-backgrounds-light);
+    --box-border: var(--box-border-light);
+    --service-card-background: var(--service-card-background-light);
+}
 
 html {
   /* scroll-snap-type: y mandatory; */
   scroll-behavior: smooth;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 .block{
   gap: 1.5rem;
+}
+
+/* Preload styles to hide content initially */
+.preload * {
+  visibility: hidden;
+}
+
+/* Show content only after the loader is removed */
+body.loaded * {
+  visibility: visible;
+}
+
+/* Loader wrapper to center it */
+.loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(211, 130, 59); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.3s ease-out;
 }

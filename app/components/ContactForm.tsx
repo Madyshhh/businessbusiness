@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { useForm } from "@formspree/react";
 
@@ -6,6 +6,28 @@ import { MdOutlinePerson } from "react-icons/md";
 import { FaEnvelope, FaExclamationTriangle, FaSuitcase, FaPhoneAlt, FaGlobeEurope } from "react-icons/fa";
 
 export default function ExampleForm() {
+  const [selectedPlan, setSelectedPlan] = useState("");
+
+  useEffect(() => {
+    const updateSelectedPlan = () => {
+      const plan = localStorage.getItem("selectedPlan");
+      if (plan) {
+        setSelectedPlan(plan);
+      }
+    };
+
+    // Update selectedPlan on component mount
+    updateSelectedPlan();
+
+    // Add an event listener to detect changes to localStorage
+    window.addEventListener("storage", updateSelectedPlan);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener("storage", updateSelectedPlan);
+    };
+  }, []);
+
   const [state, handleSubmit] = useForm("mwplpwkl");
 
   const [email, setEmail] = useState('');
@@ -27,7 +49,13 @@ export default function ExampleForm() {
   return (
     <form className="form" onSubmit={handleSubmit}>
       <fieldset className="columns is-multiline">
-
+     {/* Selected Plan */}
+     {selectedPlan && (
+          <div className="column is-full">
+           
+            <input type="hidden" name="selectedPlan" value={selectedPlan} />
+          </div>
+        )}
         <div className="column is-half">
           <div className="field">
             <label className="label" htmlFor="name">Name</label>
@@ -122,12 +150,11 @@ export default function ExampleForm() {
           <div className="field">
             <label className="label">What services are you interested in?</label>
             <div className="control checkboxes">
-              <label className="checkbox"><input type="checkbox" name="services" value="new-web-design" /> Website development for a new business</label>
+              <label className="checkbox"><input type="checkbox" name="services" value="new-web-design" /> Website development</label>
               <label className="checkbox"><input type="checkbox" name="services" value="website-redesign" /> Existing website redesign</label>
               <label className="checkbox"><input type="checkbox" name="services" value="e-commerce" /> Mobile application development</label>
-              <label className="checkbox"><input type="checkbox" name="services" value="logo-design" /> Design</label>
               <label className="checkbox"><input type="checkbox" name="services" value="seo" /> Search Engine Optimisation</label>
-              <label className="checkbox"><input type="checkbox" name="services" value="website-maintenance" /> Website Maintenance</label>
+              <label className="checkbox"><input type="checkbox" name="services" value="website-maintenance" /> Custom software</label>
               <label className="checkbox"><input type="checkbox" name="services" value="other" /> Other</label>
             </div>
           </div>
@@ -158,7 +185,7 @@ export default function ExampleForm() {
 
       <div className="field">
         <div className="control">
-          <button className="button is-primary is-responsive" type="submit">Submit</button>
+          <button className="button is-primary" type="submit" onClick={() => window.location.href = '#contact'}>Submit</button>
         </div>
       </div>
     </form>

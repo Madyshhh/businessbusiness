@@ -18,7 +18,7 @@ const CalendlyWidget: React.FC<CalendlyWidgetProps> = ({ buttonText, calendlyUrl
 
     return (
         <div>
-            <button className="button is-info is-responsive has-text-primary-bold-invert" onClick={openModal}>
+            <button className="button has-background-info has-text-info-invert" onClick={openModal}>
                 {buttonText}
             </button>
 
