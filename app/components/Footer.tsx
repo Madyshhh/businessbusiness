@@ -1,34 +1,34 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaFacebookSquare, FaInstagram, FaLinkedin, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import { FaLocationDot } from 'react-icons/fa6';
 export default function Footer() {
-    const [isAtBottom, setIsAtBottom] = useState(false);
-    const footerRef = useRef(null);
+    // const [isAtBottom, setIsAtBottom] = useState(false);
+    // const footerRef = useRef(null);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            const scrollY = window.scrollY; // Current scroll position
-            const windowHeight = window.innerHeight; // Viewport height
-            const documentHeight = document.documentElement.scrollHeight; // Total page height
+    // useEffect(() => {
+    //     const handleScroll = () => {
+    //         const scrollY = window.scrollY; // Current scroll position
+    //         const windowHeight = window.innerHeight; // Viewport height
+    //         const documentHeight = document.documentElement.scrollHeight; // Total page height
 
-            // Check if user is at the bottom
-            setIsAtBottom(scrollY + windowHeight >= documentHeight);
-        };
+    //         // Check if user is at the bottom
+    //         setIsAtBottom(scrollY + windowHeight >= documentHeight);
+    //     };
 
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    //     window.addEventListener('scroll', handleScroll);
+    //     return () => window.removeEventListener('scroll', handleScroll);
+    // }, []);
 
     return (
         <footer
-            ref={footerRef}
+            // ref={footerRef}
             className="footer"
-            style={{
-                zIndex: isAtBottom ? 10 : -10, // Only appear when at the bottom
-                position: 'sticky',
-            }}
+            // style={{
+            //     zIndex: isAtBottom ? 10 : -10, // Only appear when at the bottom
+            //     position: 'sticky',
+            // }}
         >
             <div className="container py-6">
                 <div className="columns is-multiline">
