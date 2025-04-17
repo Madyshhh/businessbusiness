@@ -48,15 +48,15 @@ const Navigation: React.FC = () => {
                         </span>
                         <span className='is-flex is-align-items-center' style={{ gap: '0.5rem' }}>
                             <FaLocationDot className='has-text-primary-on-scheme' style={{ height: '100%' }} />
-                            <a className='has-text-current' href="https://g.co/kgs/WhmKQkk" target="_blank" rel="noopener noreferrer">Stirling</a>
+                            <a className='has-text-current'  target="_blank" rel="noopener noreferrer">Stirling</a>
                         </span>
 
                     </div>
                     <div className="social-icons is-flex" style={{ gap: '1rem' }}>
-                        <a href="https://www.facebook.com/devkalm" target="_blank" rel="noopener noreferrer" style={{ height: '20px' }}>
+                        <a href="https://www.facebook.com/profile.php?id=61575318331032" target="_blank" rel="noopener noreferrer" style={{ height: '20px' }}>
                             <FaFacebookSquare style={{ height: '100%' }} color="#4267B2" />
                         </a>
-                        <a href="https://www.instagram.com/devkalm/" target="_blank" rel="noopener noreferrer" style={{ height: '20px' }}>
+                        <a href="https://www.instagram.com/devkalm_ltd/" target="_blank" rel="noopener noreferrer" style={{ height: '20px' }}>
                             <FaInstagram style={{ height: '100%' }} color="#E1306C" />
                         </a>
                         <a href="https://www.linkedin.com/company/devkalm" target="_blank" rel="noopener noreferrer" style={{ height: '20px' }}>

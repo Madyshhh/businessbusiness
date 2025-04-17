@@ -89,10 +89,10 @@ export default function Footer() {
 
                 {/* Social Media */}
                 <div className="is-flex is-justify-content-center mt-4" style={{ gap: '1rem' }}>
-                    <a href="https://www.facebook.com/devkalm" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.facebook.com/profile.php?id=61575318331032" target="_blank" rel="noopener noreferrer">
                         <FaFacebookSquare size={30} color="#4267B2" />
                     </a>
-                    <a href="https://www.instagram.com/devkalm/" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.instagram.com/devkalm_ltd/" target="_blank" rel="noopener noreferrer">
                         <FaInstagram size={30} color="#E1306C" />
                     </a>
                     <a href="https://www.linkedin.com/company/devkalm" target="_blank" rel="noopener noreferrer">
