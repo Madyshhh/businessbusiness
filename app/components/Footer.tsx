@@ -24,7 +24,7 @@ export default function Footer() {
     return (
         <footer
             ref={footerRef}
-            className="footer pb-6"
+            className="footer"
             style={{
                 zIndex: isAtBottom ? 10 : -10, // Only appear when at the bottom
                 position: 'sticky',

@@ -126,7 +126,13 @@
 
 .footer {
   bottom: 0;
-  height: 600px;
+  min-height: 600px;
+  max-height: min-content;
+  padding: 2rem; // Default padding for larger screens
+
+  @media (max-width: 768px) {
+    padding: 1rem; // Reduced padding for mobile devices
+  }
 }
 
 
