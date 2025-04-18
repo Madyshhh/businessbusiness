@@ -63,7 +63,7 @@ export default function Home() {
                   </FloatingText>
                   <FloatingText duration={0.8}>
                     <p className="subtitle is-5 hero-subtitle is-family-secondary">
-                      Custom software solutions tailored to your business needs. <br />We don&apos;t just build websites, we create robust applications, mobile experiences, and innovative software that allows your company to growth.</p>
+                      Custom software solutions tailored to your business needs. <br />We don&apos;t just build websites, we create robust applications, mobile experiences, and innovative software that allows your company to grow.</p>
                   </FloatingText>
                 </Parallax>
                 <Parallax speed={18}>
